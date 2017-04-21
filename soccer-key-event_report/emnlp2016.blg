@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: emnlp2016.aux
+The style file: emnlp2016.bst
+Database file #1: emnlp2016.bib
+Warning--empty journal in choudhury2011extracting
+Warning--empty booktitle in mihalcea2004textrank
+Warning--empty journal in salton1986introduction
+Warning--empty journal in van2012soccer
+You've used 20 entries,
+            2490 wiz_defined-function locations,
+            659 strings with 7849 characters,
+and the built_in function-call counts, 8361 in all, are:
+= -- 893
+> -- 316
+< -- 9
++ -- 107
+- -- 104
+* -- 581
+:= -- 1310
+add.period$ -- 82
+call.type$ -- 20
+change.case$ -- 128
+chr.to.int$ -- 20
+cite$ -- 24
+duplicate$ -- 368
+empty$ -- 643
+format.name$ -- 132
+if$ -- 1787
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 20
+newline$ -- 118
+num.names$ -- 60
+pop$ -- 170
+preamble$ -- 1
+purify$ -- 150
+quote$ -- 0
+skip$ -- 295
+stack$ -- 0
+substring$ -- 392
+swap$ -- 101
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 152
+warning$ -- 4
+while$ -- 69
+width$ -- 23
+write$ -- 272
+(There were 4 warnings)

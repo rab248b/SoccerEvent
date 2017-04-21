@@ -1,0 +1,136 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Bojinov and Bornn}2016]{bojinov2016pressing}
+Iavor Bojinov and Luke Bornn.
+\newblock 2016.
+\newblock The pressing game: Optimal defensive disruption in soccer.
+
+\bibitem[\protect\citename{Brooks \bgroup et al.\egroup
+  }2016]{brooks2016developing}
+Joel Brooks, Matthew Kerr, and John Guttag.
+\newblock 2016.
+\newblock Developing a data-driven player ranking in soccer using predictive
+  model weights.
+\newblock In {\em Proceedings of the 22nd ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, pages 49--55. ACM.
+
+\bibitem[\protect\citename{Choudhury and Breslin}2011]{choudhury2011extracting}
+Smitashree Choudhury and John~G Breslin.
+\newblock 2011.
+\newblock Extracting semantic entities and events from sports tweets.
+
+\bibitem[\protect\citename{Erkan and Radev}2004]{erkan2004lexrank}
+G{\"u}nes Erkan and Dragomir~R Radev.
+\newblock 2004.
+\newblock Lexrank: Graph-based lexical centrality as salience in text
+  summarization.
+\newblock {\em Journal of Artificial Intelligence Research}, 22:457--479.
+
+\bibitem[\protect\citename{Gyarmati and Hefeeda}2016]{gyarmati2016analyzing}
+L{\'a}szl{\'o} Gyarmati and Mohamed Hefeeda.
+\newblock 2016.
+\newblock Analyzing in-game movements of soccer players at scale.
+\newblock {\em arXiv preprint arXiv:1603.05583}.
+
+\bibitem[\protect\citename{John and Langley}1995]{john1995estimating}
+George~H John and Pat Langley.
+\newblock 1995.
+\newblock Estimating continuous distributions in bayesian classifiers.
+\newblock In {\em Proceedings of the Eleventh conference on Uncertainty in
+  artificial intelligence}, pages 338--345. Morgan Kaufmann Publishers Inc.
+
+\bibitem[\protect\citename{Jurafsky}2000]{jurafsky2000speech}
+Dan Jurafsky.
+\newblock 2000.
+\newblock {\em Speech \& language processing}.
+\newblock Pearson Education India.
+
+\bibitem[\protect\citename{Lanagan and Smeaton}2011]{lanagan2011using}
+James Lanagan and Alan~F Smeaton.
+\newblock 2011.
+\newblock Using twitter to detect and tag important events in live sports.
+\newblock {\em Artificial Intelligence}, 29(2):542--545.
+
+\bibitem[\protect\citename{Luhn}1958]{luhn1958automatic}
+Hans~Peter Luhn.
+\newblock 1958.
+\newblock The automatic creation of literature abstracts.
+\newblock {\em IBM Journal of research and development}, 2(2):159--165.
+
+\bibitem[\protect\citename{McCallum \bgroup et al.\egroup
+  }1998]{mccallum1998comparison}
+Andrew McCallum, Kamal Nigam, et~al.
+\newblock 1998.
+\newblock A comparison of event models for naive bayes text classification.
+\newblock In {\em AAAI-98 workshop on learning for text categorization}, volume
+  752, pages 41--48. Citeseer.
+
+\bibitem[\protect\citename{Mehlf{\"u}hrer}2009]{mehlfuhrer2009web}
+Andreas Mehlf{\"u}hrer.
+\newblock 2009.
+\newblock {\em Web scraping: A tool evaluation}.
+\newblock na.
+
+\bibitem[\protect\citename{Mihalcea and Tarau}2004]{mihalcea2004textrank}
+Rada Mihalcea and Paul Tarau.
+\newblock 2004.
+\newblock Textrank: Bringing order into texts.
+\newblock Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Penman \bgroup et al.\egroup }2009]{penman2009web}
+Richard~Baron Penman, Timothy Baldwin, and David Martinez.
+\newblock 2009.
+\newblock Web scraping made simple with sitescraper.
+
+\bibitem[\protect\citename{Rui \bgroup et al.\egroup
+  }2000]{rui2000automatically}
+Yong Rui, Anoop Gupta, and Alex Acero.
+\newblock 2000.
+\newblock Automatically extracting highlights for tv baseball programs.
+\newblock In {\em Proceedings of the eighth ACM international conference on
+  Multimedia}, pages 105--115. ACM.
+
+\bibitem[\protect\citename{Sacha \bgroup et al.\egroup }2014]{sacha2014feature}
+Dominik Sacha, Manuel Stein, Tobias Schreck, Daniel~A Keim, Oliver Deussen,
+  et~al.
+\newblock 2014.
+\newblock Feature-driven visual analytics of soccer data.
+\newblock In {\em Visual Analytics Science and Technology (VAST), 2014 IEEE
+  Conference on}, pages 13--22. IEEE.
+
+\bibitem[\protect\citename{Sahami~Shirazi \bgroup et al.\egroup
+  }2011]{sahami2011real}
+Alireza Sahami~Shirazi, Michael Rohs, Robert Schleicher, Sven Kratz, Alexander
+  M{\"u}ller, and Albrecht Schmidt.
+\newblock 2011.
+\newblock Real-time nonverbal opinion sharing through mobile phones during
+  sports events.
+\newblock In {\em Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, pages 307--310. ACM.
+
+\bibitem[\protect\citename{Salton and McGill}1986]{salton1986introduction}
+Gerard Salton and Michael~J McGill.
+\newblock 1986.
+\newblock Introduction to modern information retrieval.
+
+\bibitem[\protect\citename{Van~Oorschot \bgroup et al.\egroup
+  }2012]{van2012automatic}
+Guido Van~Oorschot, Marieke Van~Erp, and Chris Dijkshoorn.
+\newblock 2012.
+\newblock Automatic extraction of soccer game events from twitter.
+\newblock {\em Proceedings of the Workhop on Detection, Representation, and
+  Exploitation of Events in the Semantic Web (DeRiVE 2012)}, 902:21--30.
+
+\bibitem[\protect\citename{van Wijk}2012]{van2012soccer}
+Nivard van Wijk.
+\newblock 2012.
+\newblock Soccer analytics.
+
+\bibitem[\protect\citename{Xu \bgroup et al.\egroup }2003]{xu2003creating}
+Min Xu, Namunu~C Maddage, Changsheng Xu, Mohan Kankanhalli, and Qi~Tian.
+\newblock 2003.
+\newblock Creating audio keywords for event detection in soccer video.
+\newblock In {\em Multimedia and Expo, 2003. ICME'03. Proceedings. 2003
+  International Conference on}, volume~2, pages II--281. IEEE.
+
+\end{thebibliography}
