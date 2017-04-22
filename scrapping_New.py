@@ -128,8 +128,9 @@ def scrap_commentary(match_link):
 	sys.exit()
 	return
 
-def scrap():
+def scrap(date):
 	# root_url = "http://www.goal.com/en-us/fixtures"
+	root_url = "http://www.goal.com/en-us/results/" + date + "?ICID=FX_CAL_1"
 	# root_url ="http://www.goal.com/en-us/results/2017-03-04?ICID=FX_CAL_1"
 	# root_url ="http://www.goal.com/en-us/results/2017-03-05?ICID=FX_CAL_1"
 	# root_url = "http://www.goal.com/en-us/results/2017-03-11?ICID=FX_CAL_1"
@@ -142,7 +143,7 @@ def scrap():
 	# root_url = "http://www.goal.com/en-us/results/2017-04-09?ICID=FX_CAL_1"
 	# root_url = "http://www.goal.com/en-us/results/2017-04-11?ICID=FX_CAL_1"
 	# root_url = "http://www.goal.com/en-us/results/2017-04-15?ICID=FX_CAL_1"
-	root_url = "http://www.goal.com/en-us/results/2017-04-16?ICID=FX_CAL_1"
+	# root_url = "http://www.goal.com/en-us/results/2017-04-16?ICID=FX_CAL_1"
 	# root_url = "http://www.goal.com/en-us/results/2017-02-04?ICID=FX_CAL_1"
 	# root_url = "http://www.goal.com/en-us/results/2017-02-11?ICID=FX_CAL_1"
 	# root_url = "http://www.goal.com/en-us/results/2017-02-18?ICID=FX_CAL_1"
@@ -172,23 +173,23 @@ def scrap():
 	root_page = urllib2.urlopen(root_url)
 	soup = BeautifulSoup(root_page)
 	live_links = soup.find_all('a' , 'match-btn')
-	while (True):
-		with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
-			future_to_url = dict((executor.submit(scrap_commentary, link.get('href')), link.get('href'))
-                         for link in live_links)
-		
-		for future in concurrent.futures.as_completed(future_to_url):
-			url = future_to_url[future]
-			if future.exception() is not None:
-				print('%r generated an exception: %s' % (url,future.exception()))
-			else:
-				print('%r page is %d bytes' % (url, len(future.result())))
-			
-		time.sleep(120)
+	# while (True):
+	with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+		future_to_url = dict((executor.submit(scrap_commentary, link.get('href')), link.get('href'))
+					 for link in live_links)
+
+	for future in concurrent.futures.as_completed(future_to_url):
+		url = future_to_url[future]
+		if future.exception() is not None:
+			print('%r generated an exception: %s' % (url,future.exception()))
+		else:
+			print('%r page is %d bytes' % (url, len(future.result())))
+
+		# time.sleep(120)
 	
 
 
 
 
-scrap()
+# scrap()
     

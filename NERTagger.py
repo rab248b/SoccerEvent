@@ -6,16 +6,20 @@ import sys
 import math
 import pickle
 class NERTagger():
-    def __init__(self):
+    def __init__(self,directory):
         os.environ[
-            'CLASSPATH'] = 'C:\Users\Rahul\Desktop\Soccer\Stanford_Parser\stanford-parser-full-2016-10-31' + os.pathsep + "C:\Users\Rahul\Desktop\Soccer\Stanford_NER\stanford-ner-2016-10-31"
+            'CLASSPATH'] =  directory+"\Stanford_NER\stanford-ner-2016-10-31"
         os.environ[
-            'STANFORD_MODELS'] = 'C:\Users\Rahul\Desktop\Soccer\Stanford_NER\stanford-ner-2016-10-31\classifiers' + os.pathsep + 'C:\Users\Rahul\Desktop\Soccer\Stanford_Parser\stanford-parser-full-2016-10-31\stanford-parser-3.7.0-models.jar'
+            'STANFORD_MODELS'] = directory+'\Stanford_NER\stanford-ner-2016-10-31\classifiers'
+
 
     def processNewData(self):
+        """
+            Process NER Tagging for new data to be added for Training. It updates the existing entities.pkl object and add the new data to that.
+        """
         directory = "demoData/newData"
         fileList = []
-        with open('entities'+ '.pkl', 'rb') as fr:
+        with open('objects//entities'+ '.pkl', 'rb') as fr:
             [removeDic, personDic, locationDic, organizationDic] = pickle.load(fr)
         print "Initial size", len(removeDic)
         for file in os.listdir(directory):
@@ -35,17 +39,12 @@ class NERTagger():
                     splits = row.split(",")
                     if (len(splits) > 2):
                         minute = splits[0]
-                        action = splits[1]
                         if minute != "":
-                            # print minute, action
                             commentary = splits[2:]
                             if (len(commentary) > 0):
                                 words = ''.join(commentary)
                                 words = self.segmentWords(words)
                                 nertags = st.tag(words)
-                                # print nertags
-                                # # List of indices of PERSON, LOCATION and ORGANIZATION to be removed.
-                                #
                                 for nertag in nertags:
                                     if nertag[1] == "PERSON":
                                         removeList.add(nertag[0].lower())
@@ -60,23 +59,20 @@ class NERTagger():
                 personDic[file] = personList
                 locationDic[file] = locationList
                 organizationDic[file] = organizationList
-
-                # print removeList
-        # Training step 1
         print "Final size", len(removeDic)
-        with open('entities' + '.pkl', 'wb') as f1:
+        with open('objects//entities' + '.pkl', 'wb') as f1:
             pickle.dump([removeDic,personDic,locationDic,organizationDic], f1, pickle.HIGHEST_PROTOCOL)
 
     def processTestData(self):
+        """
+              Process NER Tagging for testing data. It overwrites the existing test_entities.pkl object with the new data.
+        """
         directory = "demoData/testData"
         fileList = []
         removeDic = {}
         personDic = {}
         locationDic = {}
         organizationDic = {}
-        # with open('entities'+ '.pkl', 'rb') as fr:
-        #     [removeDic, personDic, locationDic, organizationDic] = pickle.load(fr)
-        print "Initial size", len(removeDic)
         for file in os.listdir(directory):
             if file.endswith(".csv") and not (os.stat(directory + "\\" + file).st_size == 0):
                 fileList.append(file)
@@ -94,17 +90,12 @@ class NERTagger():
                     splits = row.split(",")
                     if (len(splits) > 2):
                         minute = splits[0]
-                        action = splits[1]
                         if minute != "":
-                            # print minute, action
                             commentary = splits[2:]
                             if (len(commentary) > 0):
                                 words = ''.join(commentary)
                                 words = self.segmentWords(words)
                                 nertags = st.tag(words)
-                                # print nertags
-                                # # List of indices of PERSON, LOCATION and ORGANIZATION to be removed.
-                                #
                                 for nertag in nertags:
                                     if nertag[1] == "PERSON":
                                         removeList.add(nertag[0].lower())
@@ -119,15 +110,14 @@ class NERTagger():
                 personDic[file] = personList
                 locationDic[file] = locationList
                 organizationDic[file] = organizationList
-
-                # print removeList
-        # Training step 1
         print "Final size", len(removeDic)
         with open('objects//test_entities' + '.pkl', 'wb') as f1:
             pickle.dump([removeDic,personDic,locationDic,organizationDic], f1, pickle.HIGHEST_PROTOCOL)
 
-    def processEntireData(self,entityName,directory):
-
+    def processEntireData(self,directory):
+        """
+                Process NER Tagging for entire training data. It overwrites the existing entities.pkl object with the new data for training.
+        """
         fileList = []
         removeDic = {}
         personDic = {}
@@ -152,15 +142,11 @@ class NERTagger():
                         minute = splits[0]
                         action = splits[1]
                         if minute != "":
-                            # print minute, action
                             commentary = splits[2:]
                             if (len(commentary) > 0):
                                 words = ''.join(commentary)
                                 words = self.segmentWords(words)
                                 nertags = st.tag(words)
-                                # print nertags
-                                # # List of indices of PERSON, LOCATION and ORGANIZATION to be removed.
-                                #
                                 for nertag in nertags:
                                     if nertag[1] == "PERSON":
                                         removeList.add(nertag[0].lower())
@@ -175,9 +161,7 @@ class NERTagger():
                                     personDic[file] = personList
                                     locationDic[file] = locationList
                                     organizationDic[file] = organizationList
-                # print removeList
-        # Training step 1
-        with open('objects//'+entityName + '.pkl', 'wb') as f1:
+        with open('objects//entities' + '.pkl', 'wb') as f1:
             pickle.dump([removeDic,personDic,locationDic,organizationDic], f1, pickle.HIGHEST_PROTOCOL)
 
     def segmentWords(self, s):
@@ -185,7 +169,11 @@ class NERTagger():
          * Splits lines on whitespace for file reading
         """
         return s.split()
+
     def combineData(self):
+        """
+            Combines the training data with other training objects.
+        """
         with open('objects//entities'+ '.pkl', 'rb') as fr:
             [removeDic, personDic, locationDic, organizationDic] = pickle.load(fr)
         with open('objects//22419'+ '.pkl', 'rb') as fr:
@@ -201,26 +189,6 @@ class NERTagger():
 
 
 
-if __name__ == "__main__":
-    object = NERTagger()
-    # object.processNewData()
-    # object.processTestData()
-    # directory = "demoData/223"
-    # object.processEntireData('223',directory)
-    # directory = "demoData/22418"
-    # object.processEntireData('22418', directory)
-    # directory = "demoData/225"
-    # object.processEntireData('225',directory)
-    # directory = "demoData/22830"
-    # object.processEntireData('22830', directory)
-    # directory = "demoData/228"
-    # object.processEntireData('228',directory)
-    # directory = "demoData/236+"
-    # object.processEntireData('236+',directory)
-    # directory = "demoData/224201"
-    # object.processEntireData('224201',directory)
-    # directory = "demoData/22420"
-    # object.processEntireData('22420',directory)
-    # directory = "demoData/230"
-    # object.processEntireData('230',directory)
-    object.combineData()
+# if __name__ == "__main__":
+#     object = NERTagger()
+#     object.combineData()
